@@ -14,6 +14,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+def userPage(request):
+    return render(request, "user.html")
+
 # login creacion de usuarios
 def login_request(request):
     if request.method == 'POST':
@@ -29,10 +32,10 @@ def login_request(request):
                 return render(request, 'inicio.html', {'mensaje':f"bienvenido {usuario}"})
             else:
                 print("aqui es")
-                return render(request, 'login.html', {'mensaje':"Usuario o contraseña incorrectos"})
+                return render(request, 'login.html', {'mensaje':"Usuario o contraseña incorrectos", "form": form})
         else:
             print("aqui voy")
-            return render(request, 'inicio.html', {'mensaje':"Usuario o contraseña incorrectos"}) 
+            return render(request, 'login.html', {'mensaje':"Usuario o contraseña incorrectos", "form": form}) 
            
 
     else:

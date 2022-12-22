@@ -1,14 +1,9 @@
+{% extends "user.html" %}
+{% load static %}
+
 
 
 {% block titulo %}
-<h1>Inicio de sesión</h1>
-{% endblock %}
-
-{% block algo %}
-<h1 class="mb-5">Login</h1>
-{% endblock %}
-
-{% block vaelformulario %}
 <h2 class="text-white mb-5">Login</h2>
 <form action="{% url 'login' %}" method="POST">{% csrf_token %}
    
@@ -19,4 +14,12 @@
 
     </form>
     {{ mensaje }}
+{% endblock %}
+
+{% block algo %}
+<h1 class="mb-5">Login</h1>
+{% endblock %}
+
+{% block vaelformulario %}
+
 {% endblock %}
