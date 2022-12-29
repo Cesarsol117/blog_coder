@@ -11,6 +11,8 @@ urlpatterns = [
 
     # ------------------usuari0----------------------
     path('usuarios/', include("usuarios.urls")),
+    # ------------------mensajeria----------------------
+    path('mensajeria/', include("mensajeria.urls")),
     # path('', inicio, name = "inicio"),
     
 

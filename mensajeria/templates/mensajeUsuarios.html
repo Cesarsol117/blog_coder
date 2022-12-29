@@ -1,0 +1,19 @@
+{% extends "user.html" %}
+{% load static %}
+
+{% block benvenuti %}
+
+{% endblock %}
+
+{% block titulo %}
+
+   
+<span class="subheading">Enviar mensaje a un usuario</span><br> {% csrf_token %} 
+<br>  
+<a class="btn btn-success" href="{% url 'mensajeFormulario' %}">Enviar mensajes</a>
+<a class="btn btn-success"href="{% url 'leerMensaje' %}">Leer mensajes</a>
+
+
+    {{ mensaje }}
+    
+{% endblock %}

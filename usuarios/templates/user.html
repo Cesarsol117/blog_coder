@@ -31,11 +31,16 @@
                         {% if user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'mensajeUsuarios' %}">mensajes</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'user' %}">Hola {{ user.username }}</a></li>
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'logout' %}">Salir</a></li>
+                        
+                        
+
                         {% else %}
 
                         <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'login' %}">login</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{% url 'register' %}">Registrarse</a></li>
                         
                         {% endif %}
                     </ul>
@@ -73,11 +78,7 @@
                         {% block titulo %}
 
                         {% endblock %}
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 24, 2022
-                        </p>
+                        
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />
@@ -85,15 +86,10 @@
 
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="post.html">
-                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
-                            <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
-                        </a>
-                        <p class="post-meta">
-                            Posted by
-                            <a href="#!">Start Bootstrap</a>
-                            on September 24, 2022
-                        </p>
+                        {% block mensaje %}
+
+                        {% endblock %}
+                      
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />
