@@ -11,4 +11,5 @@ urlpatterns = [
     path("mensajeUsuarios", mensajeUsuarios , name = "mensajeUsuarios"),
 
     path("leerMensaje", leerMensaje , name = "leerMensaje"),
+    path("enviadoMensaje", enviadoMensaje , name = "enviadoMensaje"),
 ]

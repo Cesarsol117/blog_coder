@@ -7,11 +7,11 @@
 
 {% block mensaje %}
 
-<h4 class="text-black-50" style="text-align: center;">Listado de mensajes recibidos</h4>
+<h4 class="text-black-50" style="text-align: center;">Listado de mensajes enviados</h4>
 <table >
     <tr>
-        <th>De:      </th> 
-        <!-- <th>Para:       </th> -->
+        <th>Desde:         </th> 
+        <th>Para:       </th>
         <th>Mensajes:   </th>
         <th>hora        </th>
         <th>leido       </th>
@@ -19,7 +19,7 @@
     {% for indice in mensajes %}
     <tr>
         <td>{{ indice.enviar }}</td>
-        <!-- <td> {{ indice.recibir }}</td> -->
+        <td> {{ indice.recibir }}</td>
         <td style="text-align: center;">{{ indice.mensaje }}</td>
         <td>{{ indice.a_quehora }}</td>
         <td>{{ indice.leido }}</td>

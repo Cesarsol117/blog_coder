@@ -28,7 +28,7 @@ def mensajeFormulario(request):
 
             mensaje1 = Mensaje(enviar=(usuario), recibir = (paraquien), mensaje=textoMensaje, leido = False)
             mensaje1.save()
-            return render(request, 'home.html', {"alerta": "mensaje enviado"} )
+            return render(request, 'mensajeFormulario.html', {"form": formulario, "alerta": "mensaje enviado"} )
         else:
             return render(request, 'home.html', {"alerta": "pailas"} )
     else:
@@ -46,9 +46,19 @@ def mensajeFormulario(request):
 def leerMensaje(request):
     usuario = request.user
     herram = Mensaje.objects.filter(recibir = usuario)
+    for mensaje in herram:
+        mensaje.leido = True
+        mensaje.save()
     print(herram)
     
     return render(request, "leerMensaje.html", {"mensajes": herram})
+
+def enviadoMensaje(request):
+    usuario = request.user
+    herram = Mensaje.objects.filter(enviar = usuario)
+    print(herram)
+    
+    return render(request, "enviadoMensaje.html", {"mensajes": herram})
 
 def buscarMensaje(request):
     pass
